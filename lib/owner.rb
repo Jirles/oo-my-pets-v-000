@@ -63,8 +63,12 @@ class Owner
     end
   end
   
+  def count_by_species(species) #must be symbol
+    self.pets[species].count
+  end
+  
   def list_pets
-    "I have #{self.pets[]} fish, #{} dog(s), and #{} cat(s)."
+    "I have #{count_by_species(:fishes)} fish, #{count_by_species(:dogs)} dog(s), and #{count_by_species(:cats)} cat(s)."
   end
     
 end
